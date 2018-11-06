@@ -1,2 +1,1 @@
-# babylonjs-gulp
-babylonjs, gulp, typescript
+# babylonjs-webpack
