@@ -15,7 +15,8 @@ module.exports = WebpackMerge(common, {
 					mangle: true,
 					warnings: false,
 					parallel: true,
-					cache: true
+					cache: true,
+					sourceMap: true
 				}
 			}),
 			new OptimizeCSSAssetsPlugin({})
