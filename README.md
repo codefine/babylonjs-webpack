@@ -29,7 +29,7 @@ npm i
 
 ``` bash
 npm run dev     # start development server
-npm run build   # package components for production env
+npm run build   # package components for production env
 ```
 
 ## Structure
