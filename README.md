@@ -40,7 +40,7 @@ npm run build   # package components for production env
   |- src
      |- assets         # static resource (textures, models ets.)
      |- libs           # librarys and plugins
-     |- styles         # sass styles
+     |- styles         # sass styles
      |- components     # Game components
      |- index.ts       # entry file
      |- index.html     # basic html file
