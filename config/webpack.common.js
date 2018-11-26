@@ -11,7 +11,6 @@ module.exports = {
 	},
 	output: {
 		filename: '[name].[hash].js',
-		// chunkFilename: '[name].bundle.js',
 		path: path.resolve(__dirname, '../dist')
 	},
 	module: {
@@ -25,12 +24,12 @@ module.exports = {
 				use: [
 					devMode ? 'style-loader' : MiniCssExtractPlugin.loader,
 					'css-loader',
-					// 'postcss-loader',
+					'postcss-loader',
 					'sass-loader',
 				],
 			},
 			{
-				test: /\.(png|svg|jpe*g|gif|obj|mtl|mp3|ogg|ttf|woff|woff2|ico)$/, // obj | mtl raw files etc...
+				test: /\.(png|svg|jpe*g|gif|mp3|ogg|ttf|woff|woff2|ico)$/, // obj | mtl raw files etc...
 				use: [
 					{
 						loader: 'file-loader',
@@ -58,37 +57,29 @@ module.exports = {
 	},
 	resolve: {
 		extensions: ['.ts', '.js'],
+		alias: {
+			'pepjs': path.resolve(__dirname, '../node_modules/pepjs/dist/pep.min.js')
+		}
 	},
 	plugins: [
 		new CleanWebpackPlugin(['dist'], {
 			root: path.resolve(__dirname, '../')
 		}),
 		new HtmlWebpackPlugin({
+			title: 'abc',
 			template: path.resolve(__dirname, '../src/index.html'),
 			favicon: path.resolve(__dirname, '../src/favicon.ico'),
 		}),
 		new MiniCssExtractPlugin({
 			filename: devMode ? '[name].css' : '[name].[hash].css',
 			chunkFilename: devMode ? '[id].css' : '[id].[hash].css',
-		})
-		// new CopyWebpackPlugin([
-		// 	{
-		// 		from: path.resolve(__dirname, '../src/models'),
-		// 		to: 'src/models'
-		// 	},
-		// 	{
-		// 		from: path.resolve(__dirname, '../src/images/pointer'),
-		// 		to: 'src/images/pointer'
-		// 	},
-		// 	{
-		// 		from: path.resolve(__dirname, '../src/images/loading.gif'),
-		// 		to: 'src/images/loading.gif'
-		// 	},
-		// 	{
-		// 		from: path.resolve(__dirname, '../src/images/quickstart.png'),
-		// 		to: 'src/images/quickstart.png'
-		// 	},
-		// ])
+		}),
+		new CopyWebpackPlugin([
+			{
+				from: path.resolve(__dirname, '../src/assets'),
+				to: 'assets'
+			}
+		])
 	],
 	optimization: {
 		namedChunks: true,
@@ -104,5 +95,10 @@ module.exports = {
 				}
 			}
 		}
-	}
+	},
+	// externals: {
+	// 	"oimo": true,
+	// 	"cannon": true,
+	// 	"earcut": true
+	// }
 };
