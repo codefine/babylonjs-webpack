@@ -1,5 +1,6 @@
 import * as BABYLON from 'babylonjs';
 import { arcRotateCameraFixer } from '../libs/tencentTouchFixers';
+import FPSMonitor from '../libs/fpsMonitor';
 
 export default class Game {
 
@@ -14,6 +15,7 @@ export default class Game {
         this._canvas = document.querySelector(canvasElement) as HTMLCanvasElement;
         this._engine = new BABYLON.Engine(this._canvas, true, {}, true);
         this._scene = new BABYLON.Scene(this._engine);
+        new FPSMonitor(this._scene);
         this.createBasicEnv();
     }
 

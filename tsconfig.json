@@ -67,7 +67,6 @@
     "./src/index.ts"
   ],
   "exclude": [
-    "./src/pep.js",
-    "./config/*.js"
+    "./src/pep.js"
   ]
 }

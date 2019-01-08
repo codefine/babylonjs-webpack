@@ -66,7 +66,6 @@ module.exports = {
 			root: path.resolve(__dirname, '../')
 		}),
 		new HtmlWebpackPlugin({
-			title: 'abc',
 			template: path.resolve(__dirname, '../src/index.html'),
 			favicon: path.resolve(__dirname, '../src/favicon.ico'),
 		}),
@@ -96,9 +95,9 @@ module.exports = {
 			}
 		}
 	},
-	// externals: {
-	// 	"oimo": true,
-	// 	"cannon": true,
-	// 	"earcut": true
-	// }
+	externals: {
+		"oimo": true,
+		"cannon": true,
+		"earcut": true
+	}
 };
