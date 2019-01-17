@@ -5,8 +5,11 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "predev": "npm run map",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --progress --config config/webpack.dev.js",
-    "build": "webpack --config config/webpack.prod.js"
+    "prebuild": "npm run map",
+    "build": "webpack --config config/webpack.prod.js",
+    "map": "node mapper.js"
   },
   "repository": {
     "type": "git",

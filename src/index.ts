@@ -1,9 +1,7 @@
 import './styles/index.scss';
 import 'pepjs';
 
-import Game from './components/game';
+import Engine from './components/engine';
 
-window.addEventListener('DOMContentLoaded', () => {
-    const game = new Game('#renderCanvas');
-    game.doRender();
-});
+const engine = new Engine('#renderCanvas');
+engine.doRender();
