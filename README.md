@@ -50,5 +50,5 @@ npm run build   # package components for production env
 
 ## libs
 
-* `tencentToucbhFixers` - Fixed Touch-Error in mobile broswer such as { QQ, Wechat }
+* `tencentTouchFixers` - Fixed Touch-Error in mobile broswer such as { QQ, Wechat }
 * `fpsMonitor` - FPS monitor by GUI
