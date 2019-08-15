@@ -1,5 +1,4 @@
-import * as BABYLON from 'babylonjs';
-import { arcRotateCameraFixer } from '../libs/tencentTouchFixers';
+import * as BABYLON from '@babylonjs/core';
 import FPSMonitor from '../libs/fpsMonitor';
 
 export default class Game {
@@ -44,7 +43,6 @@ export default class Game {
         this._camera.upperBetaLimit = Math.PI / 2;
         this._camera.lowerRadiusLimit = 5;
         this._camera.upperRadiusLimit = 30;
-        arcRotateCameraFixer(this._camera as BABYLON.ArcRotateCamera); // fixed Touch-Error in mobile broswer such as { QQ, Wechat } 修复QQ微信中相机的触摸问题
         this._camera.attachControl(this._canvas, false);
 
         // Create loading manager

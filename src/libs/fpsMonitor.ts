@@ -1,5 +1,5 @@
-import { Scene, Observer } from 'babylonjs';
-import { AdvancedDynamicTexture, Rectangle, Control, TextBlock } from 'babylonjs-gui';
+import { Scene, Observer } from '@babylonjs/core';
+import { AdvancedDynamicTexture, Rectangle, Control, TextBlock } from '@babylonjs/gui';
 
 export default class FPSMonitor {
     

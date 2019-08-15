@@ -7,7 +7,7 @@ import {
     Observer,
     Tools,
     ArcRotateCamera
-} from 'babylonjs';
+} from '@babylonjs/core';
 
 const __decoratorInitialStore = {};
 
